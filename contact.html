@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Soty.Dev</title>
+    <link rel="stylesheet" href="fonts/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .contact-grid {
+        max-width: 800px;
+        margin: 100px auto;
+        display: grid;
+        gap: 20px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .contact-item i {
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent);
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">SOTY<span>.DEV</span></a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="mailto:jasperchukwuji@gmail.com" class="nav-btn">Email Me</a>
+      </div>
+    </nav>
+
+    <div class="container contact-grid">
+      <div class="card reveal active">
+        <h1>Get in <span class="highlight">Touch.</span></h1>
+        <p>
+          I'm always open to discussing new projects, creative ideas or
+          opportunities to be part of your visions.
+        </p>
+
+        <div style="margin-top: 40px; display: grid; gap: 20px">
+          <a href="https://github.com/" class="contact-item">
+            <i class="fa-brands fa-github"></i>
+            <div>
+              <h3>GitHub</h3>
+              <p>Soty_102</p>
+            </div>
+          </a>
+          <a href="https://linkedin.com/" class="contact-item">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <div>
+              <h3>LinkedIn</h3>
+              <p>Jasper Chukwuji</p>
+            </div>
+          </a>
+          <a href="mailto:jasperchukwuji@gmail.com" class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <p>jasperchukwuji@gmail.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
