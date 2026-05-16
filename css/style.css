@@ -37,6 +37,7 @@ body {
 
 /* Navigation */
 nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -467,6 +468,7 @@ footer{
 
 /* Project Detail Page Styles (supaSlice.html and similar project pages) */
 .project-detail-container {
+  margin: auto 0;
   grid-template-columns: 1fr; /* Full width for project detail */
   max-width: 900px; /* Adjust as needed */
   margin-top: 40px;
@@ -478,6 +480,67 @@ footer{
   display: flex;
   flex-direction: column;
 }
+
+/* --- Bulletproof Fix for Ultra-Slim Screens (e.g., Galaxy Fold) --- */
+@media (max-width: 480px) {
+  /* 1. Strictly lock the viewport width */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    position: relative;
+  }
+
+  /* 2. Force all text to wrap instead of pushing the screen wider */
+  * {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* 3. Reclaim maximum screen real estate by gutting the padding */
+  .container {
+    padding: 0 10px; /* Shrinks outer margins */
+  }
+  
+  .card, .project-detail-container .card {
+    padding: 15px; /* Gives the text room to breathe inside the card */
+  }
+
+  /* 4. Scale down typography so titles don't overflow */
+  h1, .project-title {
+    font-size: 1.8rem !important; 
+    line-height: 1.2;
+  }
+
+  /* 5. Force flex containers (like tech icons) to wrap if they run out of space */
+  .stack-icons, .project-tech-icons {
+    flex-wrap: wrap;
+    gap: 15px; 
+  }
+
+  /* 6. Override the stubborn 300px grid minimums globally */
+  .project-grid, .image-gallery {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 7. Stack all buttons vertically and make them full width */
+  .project-links, .project-navigation {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch; /* Stretches buttons to fill container */
+  }
+  
+  .project-links .btn, .project-navigation .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  /* 8. Fix the navigation header padding for tiny screens */
+  nav {
+    padding: 15px 5%;
+  }
+}
+
 
 .back-to-projects {
   display: inline-flex;
