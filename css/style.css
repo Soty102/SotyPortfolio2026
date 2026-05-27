@@ -41,7 +41,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 15px 8%;
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -90,20 +90,20 @@ nav {
 /* Bento Grid Layout */
 .container {
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 40px auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(180px, auto);
-  gap: 20px;
+  grid-auto-rows: minmax(130px, auto);
+  gap: 16px;
 }
 
 /* Card Base Styling */
 .card {
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
-  border-radius: 32px;
-  padding: 35px;
+  border-radius: 24px;
+  padding: 24px;
   backdrop-filter: blur(10px);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
@@ -121,15 +121,19 @@ nav {
 /* Card Variations */
 .hero-card {
   grid-column: span 2;
-  grid-row: span 2;
 }
 
 .photo-card {
   grid-column: span 1;
-  grid-row: span 2;
   background-color: #1e1e3f;
   background: url("../images/IMG_20250208_132256_642@260905163.jpg")
     center/cover no-repeat;
+  min-height: 280px;
+}
+
+/* Utility for row spanning */
+.row-2 {
+  grid-row: span 2;
 }
 
 .operation-card {
@@ -152,7 +156,6 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 200px;
   transition: background 0.4s;
 }
 
@@ -174,21 +177,25 @@ nav {
 }
 
 /* Randomized positions and different animation delays */
-#github { 
-  top: 20%; left: 15%; 
-  animation-delay: 0s; 
+#github {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
 }
-#facebook { 
-  top: 45%; left: 65%; 
-  animation-delay: 0.5s; 
+#facebook {
+  top: 45%;
+  left: 65%;
+  animation-delay: 0.5s;
 }
-#instagram { 
-  top: 15%; left: 70%; 
-  animation-delay: 1s; 
+#instagram {
+  top: 15%;
+  left: 70%;
+  animation-delay: 1s;
 }
-#linkedin { 
-  top: 50%; left: 25%; 
-  animation-delay: 1.5s; 
+#linkedin {
+  top: 50%;
+  left: 25%;
+  animation-delay: 1.5s;
   background-color: #0077b5;
   color: white;
   border-radius: 50px;
@@ -197,8 +204,46 @@ nav {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+/* Contact Page Specials */
+.whatsapp-card {
+  background: #25d366 !important;
+  color: white !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.whatsapp-card i {
+  font-size: 3.5rem;
+}
+
+.contact-item-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.contact-item-small i {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.flyer-card {
+  grid-column: span 4;
 }
 
 /* Elements */
@@ -213,14 +258,13 @@ nav {
   display: inline-block;
 }
 
-a{
+a {
   text-decoration: none;
-  color: inherit;;
+  color: inherit;
 }
 
-
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.1;
   margin-bottom: 15px;
   letter-spacing: -2px;
@@ -235,8 +279,8 @@ p {
   font-size: 1rem;
 }
 
-ul{
- list-style: none;
+ul {
+  list-style: none;
 }
 
 .stack-icons {
@@ -358,45 +402,44 @@ ul{
   }
 }
 
-footer{
+footer {
   padding: 20px 10px;
 }
-.footer-top{
+.footer-top {
   margin: 0 auto;
   padding: 0 auto;
 }
 
-
-#github{
-    background-color: var(--accent);
-    font-size: 0.8rem;
-    border-radius: 50px;
-    padding: 7px;
-    padding-left: 7px;
-    padding-right: 7px;
-    transition: .7s;
-    color: white;
+#github {
+  background-color: var(--accent);
+  font-size: 0.8rem;
+  border-radius: 50px;
+  padding: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  transition: 0.7s;
+  color: white;
 }
 
-#facebook{
-    background-color: #4267B2;
-    font-size: 0.8rem;
-    border-radius: 50px;
-    padding: 7px;
-    padding-left: 7px;
-    padding-right: 7px;
-    transition: .7s;
-    color: white;
+#facebook {
+  background-color: #4267b2;
+  font-size: 0.8rem;
+  border-radius: 50px;
+  padding: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  transition: 0.7s;
+  color: white;
 }
-#instagram{
-    background:linear-gradient(to bottom, #feda75, #fa7e1e, #926fbf, #4f5bf4);
-    border-radius: 50px;
-    padding: 7px;
-    padding-left: 7px;
-    padding-right: 7px;
-    transition: .7s;
-    transition: .7s;
-    color: white;
+#instagram {
+  background: linear-gradient(to bottom, #feda75, #fa7e1e, #926fbf, #4f5bf4);
+  border-radius: 50px;
+  padding: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  transition: 0.7s;
+  transition: 0.7s;
+  color: white;
 }
 
 /* Catchy Mobile Bento Grid */
@@ -476,7 +519,7 @@ footer{
 }
 
 .project-detail-container .card {
-  padding: 40px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -484,7 +527,8 @@ footer{
 /* --- Bulletproof Fix for Ultra-Slim Screens (e.g., Galaxy Fold) --- */
 @media (max-width: 480px) {
   /* 1. Strictly lock the viewport width */
-  html, body {
+  html,
+  body {
     overflow-x: hidden !important;
     width: 100%;
     position: relative;
@@ -500,47 +544,52 @@ footer{
   .container {
     padding: 0 10px; /* Shrinks outer margins */
   }
-  
-  .card, .project-detail-container .card {
+
+  .card,
+  .project-detail-container .card {
     padding: 15px; /* Gives the text room to breathe inside the card */
   }
 
   /* 4. Scale down typography so titles don't overflow */
-  h1, .project-title {
-    font-size: 1.8rem !important; 
+  h1,
+  .project-title {
+    font-size: 1.8rem !important;
     line-height: 1.2;
   }
 
   /* 5. Force flex containers (like tech icons) to wrap if they run out of space */
-  .stack-icons, .project-tech-icons {
+  .stack-icons,
+  .project-tech-icons {
     flex-wrap: wrap;
-    gap: 15px; 
+    gap: 15px;
   }
 
   /* 6. Override the stubborn 300px grid minimums globally */
-  .project-grid, .image-gallery {
+  .project-grid,
+  .image-gallery {
     grid-template-columns: 1fr !important;
   }
 
   /* 7. Stack all buttons vertically and make them full width */
-  .project-links, .project-navigation {
+  .project-links,
+  .project-navigation {
     flex-direction: column;
     gap: 10px;
     align-items: stretch; /* Stretches buttons to fill container */
   }
-  
-  .project-links .btn, .project-navigation .btn {
+
+  .project-links .btn,
+  .project-navigation .btn {
     width: 100%;
     text-align: center;
     justify-content: center;
   }
-  
+
   /* 8. Fix the navigation header padding for tiny screens */
   nav {
     padding: 15px 5%;
   }
 }
-
 
 .back-to-projects {
   display: inline-flex;
@@ -562,7 +611,7 @@ footer{
 }
 
 .project-title {
-  font-size: 3.5rem; /* Larger title for emphasis */
+  font-size: 2.8rem; /* Adjusted from 3.5rem */
   margin-bottom: 20px;
   line-height: 1.1;
 }
@@ -651,5 +700,5 @@ footer{
 .project-navigation .btn:hover {
   border-color: var(--accent);
   box-shadow: 0 0 10px var(--accent-glow);
-  transform: translateY
+  transform: translateY(-4px);
 }

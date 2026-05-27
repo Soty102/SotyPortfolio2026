@@ -4,31 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Soty.Dev</title>
-    <link rel="stylesheet" href="fonts/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="./fonts/css/all.css" type="text/css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <style>
-      .contact-grid {
-        max-width: 800px;
-        margin: 100px auto;
-        display: grid;
-        gap: 20px;
-      }
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .contact-item i {
-        font-size: 1.5rem;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--accent);
-        border-radius: 12px;
-      }
-    </style>
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <nav>
@@ -37,43 +22,93 @@
       </div>
       <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="index.html#project-section">Projects</a>
         <a href="mailto:jasperchukwuji@gmail.com" class="nav-btn">Email Me</a>
       </div>
+      <button class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </nav>
 
-    <div class="container contact-grid">
-      <div class="card reveal active">
-        <h1>Get in <span class="highlight">Touch.</span></h1>
+    <div class="container">
+      <!-- Hero Section -->
+      <div class="card reveal active hero-card">
+        <h1>Let's <span class="highlight">Work Together.</span></h1>
         <p>
-          I'm always open to discussing new projects, creative ideas or
-          opportunities to be part of your visions.
+          I'm currently available for freelance projects, full-time positions,
+          and tutoring sessions. Whether you have a question or just want to say
+          hi, my inbox is always open.
         </p>
+      </div>
 
-        <div style="margin-top: 40px; display: grid; gap: 20px">
-          <a href="https://github.com/Soty102" class="contact-item">
-            <i class="fa-brands fa-github"></i>
-            <div>
-              <h3>GitHub</h3>
-              <p>Soty_102</p>
-            </div>
-          </a>
-          <a href="https://linkedin.com/" class="contact-item">
-            <i class="fa-brands fa-linkedin-in"></i>
-            <div>
-              <h3>LinkedIn</h3>
-              <p>Jasper Chukwuji</p>
-            </div>
-          </a>
-          <a href="mailto:jasperchukwuji@gmail.com" class="contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <div>
-              <h3>Email</h3>
-              <p>jasperchukwuji@gmail.com</p>
-            </div>
+      <a
+        href="https://linkedin.com/"
+        target="_blank"
+        class="card reveal active contact-item-small"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+        <p>LinkedIn</p>
+      </a>
+
+      <!-- WhatsApp API Link -->
+      <!-- REPLACE 2340000000000 with your actual WhatsApp number -->
+      <a
+        href="https://wa.me/2340000000000?text=Hello%20Jasper,%20I%20saw%20your%20portfolio%20and..."
+        target="_blank"
+        class="card reveal active whatsapp-card"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Chat with me directly</p>
+      </a>
+
+      <a
+        href="https://github.com/Soty102"
+        target="_blank"
+        class="card reveal active contact-item-small"
+      >
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </a>
+
+      <!-- Resources Section (CV Download) -->
+      <div class="card reveal active stack-card">
+        <h2>Resources</h2>
+        <p>Grab a copy of my resume or professional brochure.</p>
+        <div class="contact-links" style="margin-top: 20px">
+          <a href="./assets/Jasper_Chukwuji_CV.pdf" download class="btn">
+            <i class="fa-solid fa-download"></i> Download CV
           </a>
         </div>
       </div>
+
+      <a
+        href="mailto:jasperchukwuji@gmail.com"
+        class="card reveal active contact-item-small email-card"
+      >
+        <i class="fa-solid fa-envelope"></i>
+        <p>Email Me</p>
+      </a>
+
+      <!-- Services / Flyer Spot -->
+      <div class="card reveal active flyer-card">
+        <div class="work-img">
+          <!-- REPLACE with your actual flyer image path -->
+          <img src="images/my-services-flyer.png" alt="My Services Flyer" />
+        </div>
+        <div class="work-info">
+          <h3>Available Services</h3>
+          <p>Web Development, Graphics Design, and Tutoring.</p>
+        </div>
+      </div>
     </div>
+
+    <footer>
+      <div class="footer-top">
+        <h4>Soty<span class="highlight">.Dev</span></h4>
+        <h4>© 2026, All Rights Reserved</h4>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
