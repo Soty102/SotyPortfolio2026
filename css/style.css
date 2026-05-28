@@ -375,6 +375,8 @@ ul {
   color: var(--text-main);
   border-color: var(--text-dim);
   border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
   background-color: var(--accent);
 }
 .btn a {
@@ -491,18 +493,24 @@ footer {
   .container {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(130px, auto);
-    gap: 12px;
+    gap: 10px; /* Tighter gap for small screens */
     margin: 30px auto;
+    padding: 0 10px; /* Minimal padding to maximize space on 340px screens */
   }
 
   .hero-card,
   .stack-card,
-  .tutoring-card {
+  .tutoring-card,
+  .flyer-card {
     grid-column: span 2;
   }
+
   .photo-card,
   .operation-card,
-  .social-card {
+  .social-card,
+  .whatsapp-card,
+  .contact-item-small,
+  .email-card {
     grid-column: span 1;
   }
 
@@ -510,13 +518,24 @@ footer {
     font-size: 2.2rem;
     letter-spacing: -1px;
   }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
   .card {
-    padding: 25px;
+    padding: 18px; /* Slightly reduced padding for narrow columns */
     border-radius: 24px;
   }
 
+  .whatsapp-card i {
+    font-size: 2.5rem; /* Scaled down icon to prevent card overflow */
+    transition: 0.3s;
+  }
+
   .work-img img {
-    object-fit: fill;
+    height: auto;
+    min-height: 180px;
   }
 }
 
@@ -533,85 +552,6 @@ footer {
   padding: 30px;
   display: flex;
   flex-direction: column;
-}
-
-/* --- Bulletproof Fix for Ultra-Slim Screens (e.g., Galaxy Fold) --- */
-@media (max-width: 480px) {
-  /* 1. Strictly lock the viewport width */
-  html,
-  body {
-    overflow-x: hidden !important;
-    width: 100%;
-    position: relative;
-  }
-
-  /* 2. Force all text to wrap instead of pushing the screen wider */
-  * {
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* 3. Reclaim maximum screen real estate by gutting the padding */
-  .container {
-    padding: 0 10px; /* Shrinks outer margins */
-    grid-template-columns: 1fr !important;
-    padding: 0 10px;
-  }
-
-  .hero-card, .stack-card, .tutoring-card, .flyer-card, .photo-card, .operation-card, .social-card {
-    grid-column: span 1 !important;
-  }
-
-  .card,
-  .project-detail-container .card {
-    padding: 15px; /* Gives the text room to breathe inside the card */
-  }
-
-  /* 4. Scale down typography so titles don't overflow */
-  h1,
-  .project-title {
-    font-size: 1.8rem !important;
-    line-height: 1.2;
-  }
-
-  .whatsapp-card i {
-    font-size: 2.5rem !important;
-    transition: 0.3s;
-  }
-
-  /* 5. Force flex containers (like tech icons) to wrap if they run out of space */
-  .stack-icons,
-  .project-tech-icons {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  /* 6. Override the stubborn 300px grid minimums globally */
-  .project-grid,
-  .container,
-  .image-gallery {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* 7. Stack all buttons vertically and make them full width */
-  .project-links,
-  .project-navigation {
-    flex-direction: column;
-    gap: 10px;
-    align-items: stretch; /* Stretches buttons to fill container */
-  }
-
-  .project-links .btn,
-  .project-navigation .btn {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-
-  /* 8. Fix the navigation header padding for tiny screens */
-  nav {
-    padding: 15px 5%;
-  }
 }
 
 .back-to-projects {
