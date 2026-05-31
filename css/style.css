@@ -358,6 +358,11 @@ ul {
   display: block;
   border-radius: 8px;
 }
+
+.gallery-item {
+  cursor: zoom-in;
+  display: block;
+}
 .work-info {
   padding: 25px;
 }
